@@ -51,8 +51,8 @@ class MapContainer extends Component {
               key={index}
               name={address.properties.SNAME}
               position={{
-                lat: address.latitude,
-                lng: address.longitude,
+                lat: address.geometry.coordinates[1],
+                lng: address.geometry.coordinates[1],
               }}
                onClick={this.onMarkerClick}
             ></Marker>
