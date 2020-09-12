@@ -44,19 +44,13 @@ class MapContainer extends Component {
         google={this.props.google}
         initialCenter={this.props.center}
         zoom={this.props.zoom}
-      >
-        {sample.features.map((address, index) => {
-          return (
-            <Marker
-              key={index}
-              name={address.properties.SNAME}
-              position={{
-                lat: address.geometry.coordinates[1],
-                lng: address.geometry.coordinates[0],
-              }}
-               onClick={this.onMarkerClick}
-            ></Marker>
-          );
+      >{this.state.locations.map((location, i) => {
+            return (
+              <Marker
+                key={i}
+                position={{ lat: location.lat(), lng: location.lng() }}
+              />
+            );
         })}
         <InfoWindow
           marker={this.state.activeMarker}
