@@ -52,7 +52,7 @@ class MapContainer extends Component {
               name={address.properties.SNAME}
               position={{
                 lat: address.geometry.coordinates[1],
-                lng: address.geometry.coordinates[1],
+                lng: address.geometry.coordinates[0],
               }}
                onClick={this.onMarkerClick}
             ></Marker>
