@@ -44,7 +44,7 @@ class MapContainer extends Component {
         google={this.props.google}
         initialCenter={this.props.center}
         zoom={this.props.zoom}
-      {sample.features.map((address, index) => {
+      >{sample.features.map((address, index) => {
         return (
           <Marker
             key={index}
